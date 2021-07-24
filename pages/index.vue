@@ -281,4 +281,22 @@ option {
   border-radius: 4px;
   margin-top: 15px;
 }
+
+@media all and (max-width: 400px) {
+  .entity-btns {
+    flex-direction: column;
+  }
+
+  .entity-on-goog {
+    margin: 0;
+  }
+
+  .entity-btns button {
+    width: 100%;
+  }
+
+  .entity-on-goog a, .entity-website a {
+    width: 100%;
+  }
+}
 </style>
