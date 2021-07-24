@@ -16,7 +16,7 @@
 }
 
 nav {
-  padding: 10px 0;
+  margin: 10px 0;
 }
 
 #logo {
@@ -32,6 +32,7 @@ h1 {
   background-clip: text;
 	-webkit-background-clip: text;
   color: transparent;
+  padding: 5px 0;
 }
 
 @media all and (max-width: 500px) {
