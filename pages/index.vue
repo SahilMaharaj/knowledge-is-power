@@ -89,6 +89,16 @@
 <script>
 export default {
   layout: 'default',
+  head: {
+    title: "Knowledge Graph Search | Sahil Maharaj",
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: "Search for knowledge graphs directly from Google's API. Built by Sahil Maharaj - Jellyfish."
+      }
+    ]
+  },
   data() {
     return {
       input: '',

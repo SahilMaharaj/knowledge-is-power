@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'knowledge-stuff',
+    title: 'Knowledge Graph Search',
     htmlAttrs: {
       lang: 'en-ZA'
     },
