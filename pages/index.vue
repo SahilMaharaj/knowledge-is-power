@@ -117,6 +117,7 @@ export default {
         const setLimit = this.limit
         const setType = this.type
         this.results = ''
+        this.noResults = ''
         this.loading = true
         const results = await this.$axios.$get(`https://kgsearch.googleapis.com/v1/entities:search?limit=${setLimit}&query=${userQuery}&types=${setType}&key=AIzaSyA38VQCpP0Tk2ahl1xj9a428QCe8e2IhtM`)
         
