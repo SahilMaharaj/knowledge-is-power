@@ -17,7 +17,7 @@ export default {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('~assets/fonts/HelveticaNeueCyr-Heavy.woff2');
+  src: url('~/static/fonts/HelveticaNeueCyr-Heavy.woff2');
 }
 
 @font-face {
@@ -25,7 +25,7 @@ export default {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('~assets/fonts/HelveticaNeueCyr-Medium.woff2');
+  src: url('~/static/fonts/HelveticaNeueCyr-Medium.woff2');
 }
 
 @font-face {
@@ -33,23 +33,7 @@ export default {
   font-style: normal;
   font-weight: 100;
   font-display: swap;
-  src: url('~assets/fonts/HelveticaNeueCyr-Thin.woff2');
-}
-
-@font-face {
-  font-family: 'Helvetica Neue Bold';
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url('~assets/fonts/HelveticaNeueCyr-Bold.woff2');
-}
-
-@font-face {
-  font-family: 'Helvetica Neue Light';
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url('~assets/fonts/HelveticaNeueCyr-Light.woff2');
+  src: url('~/static/fonts/HelveticaNeueCyr-Thin.woff2');
 }
 
   html {

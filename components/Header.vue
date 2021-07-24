@@ -7,14 +7,6 @@
 </template>
 
 <style scoped>
-@font-face {
-  font-family: 'Helvetica Neue Bold';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('~assets/fonts/HelveticaNeueCyr-Heavy.woff2');
-}
-
 nav {
   margin: 10px 0;
 }

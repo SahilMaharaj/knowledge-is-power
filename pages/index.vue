@@ -55,7 +55,7 @@
         <div class="entity-desc">
           <h3>{{ entity.result.description }}</h3>
         </div>
-        <div class="entity-types">
+        <div class="entity-types" v-if="entity.result['@type']">
           {{ entity.result["@type"].join(" | ") }}
         </div>
         <div v-for="desc in entity.result" :key="desc.articleBody">
@@ -63,24 +63,19 @@
         </div>
 
         <div class="entity-btns">
-
           <div class="entity-on-goog">
             <button><a :href="`https://www.google.com/search?q=${entity.result.name}+&kponly&kgmid=${entity.result['@id'].substring(3)}`" target="_blank">View on Google</a></button>
           </div>
-
           <div v-if="entity.result.url" class="entity-website">
             <button>
               <a target="_blank" :href="entity.result.url">Entity Website</a>
             </button>
           </div>
-
         </div>
-
-        
-
       </div>
     </div>
 
+    <div v-if="loading"><Loader /></div>
     <div>{{ noResults }}</div> 
 
     <!--- ERROR --->
@@ -102,6 +97,7 @@ export default {
       limit: '',
       type: '',
       noResults: '',
+      loading: false
     }
   },
   methods: {
@@ -110,6 +106,8 @@ export default {
         const userQuery = this.input
         const setLimit = this.limit
         const setType = this.type
+        this.results = ''
+        this.loading = true
         const results = await this.$axios.$get(`https://kgsearch.googleapis.com/v1/entities:search?limit=${setLimit}&query=${userQuery}&types=${setType}&key=AIzaSyA38VQCpP0Tk2ahl1xj9a428QCe8e2IhtM`)
         
         this.results = results
@@ -120,11 +118,18 @@ export default {
           this.noResults = "No Results."
         }
         
+        this.loading = false
         return { results }
       } catch (error) {
           this.error = error
           return { error }
-      }
+      } 
+    },
+    start() {
+      this.loading = true
+    },
+    finish() {
+      this.loading - false
     }
   }
 }
