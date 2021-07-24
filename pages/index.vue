@@ -188,10 +188,13 @@ form {
 }
 
 .sl-limit, .sl-type {
+  -webkit-appearance: none; 
+  -moz-appearance: none;
+  appearance: none;
   width: 100%;
   font-family: 'Helvetica Neue Medium';
   font-size: 16px;
-  padding: 15px;
+  padding: 15px !important;
   border: 1px solid grey;
   border-radius: 4px;
   cursor: pointer;
