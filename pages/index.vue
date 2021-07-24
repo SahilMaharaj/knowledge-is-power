@@ -191,6 +191,8 @@ form {
   -webkit-appearance: none; 
   -moz-appearance: none;
   appearance: none;
+  background: url('~/static/down-arrow.png') no-repeat;
+  background-position: right center;
   width: 100%;
   font-family: 'Helvetica Neue Medium';
   font-size: 16px;
