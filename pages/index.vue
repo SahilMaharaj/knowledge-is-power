@@ -50,7 +50,7 @@
     <div class="results" v-for="entity in results.itemListElement" :key="entity.name">
       <div class="result-wrapper">
         <div class="entity-name">
-          <h2>{{ entity.result.name }}</h2>
+          <h2 v-html="entity.result.name"></h2>
         </div>
         <div class="entity-desc">
           <h3>{{ entity.result.description }}</h3>
@@ -60,7 +60,7 @@
         </div>
         <div v-for="desc in entity.result" :key="desc.articleBody">
           <div class="entity-longDesc">
-            <p>{{ desc.articleBody }}</p>
+            <p v-html="desc.articleBody"></p>
             <p class="entity-desc-source" v-if="desc.url">Source: <a target="_blank" :href="desc.url">Wikipedia</a></p>
             </div>
         </div>
@@ -116,7 +116,7 @@ export default {
   methods: {
     async fetchResults() {
       try {
-        const userQuery = this.input
+        const userQuery = escape(this.input)
         const setLimit = this.limit
         const setType = this.type
         this.results = ''
@@ -131,7 +131,7 @@ export default {
         if(results.itemListElement.length === 0) {
           this.noResults = "No Results."
         }
-        
+       
         this.loading = false
         return { results }
       } catch (error) {
