@@ -100,7 +100,7 @@ export default {
         name: 'description',
         content: "Search for knowledge graphs directly from Google's API. Built by Sahil Maharaj - Jellyfish."
       }
-    ]
+    ],
   },
   data() {
     return {

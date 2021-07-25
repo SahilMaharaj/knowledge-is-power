@@ -5,12 +5,12 @@
   </div>
 </template>
 
+
 <style>
 @font-face {
   font-family: 'Helvetica Neue Heavy';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
   src: url('~/static/fonts/HelveticaNeueCyr-Heavy.woff2');
 }
 
@@ -18,7 +18,6 @@
   font-family: 'Helvetica Neue Medium';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
   src: url('~/static/fonts/HelveticaNeueCyr-Medium.woff2');
 }
 
@@ -26,7 +25,6 @@
   font-family: 'Helvetica Neue Thin';
   font-style: normal;
   font-weight: 100;
-  font-display: swap;
   src: url('~/static/fonts/HelveticaNeueCyr-Thin.woff2');
 }
 
