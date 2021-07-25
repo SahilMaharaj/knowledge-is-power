@@ -16,9 +16,6 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'preload', type: 'font/woff2', as: 'font', href: 'fonts/HelveticaNeueCyr-Heavy.woff2', crossorigin: 'anonymous' },
-      { rel: 'preload', type: 'font/woff2', as: 'font', href: 'fonts/HelveticaNeueCyr-Medium.woff2', crossorigin: 'anonymous' },
-      { rel: 'preload', type: 'font/woff2', as: 'font', href: 'fonts/HelveticaNeueCyr-Thin.woff2', crossorigin: 'anonymous' }
     ]
   },
 
