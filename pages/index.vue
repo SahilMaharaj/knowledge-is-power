@@ -59,16 +59,19 @@
           {{ entity.result["@type"].join(" | ") }}
         </div>
         <div v-for="desc in entity.result" :key="desc.articleBody">
-          <p class="entity-longDesc">{{ desc.articleBody }}</p>
+          <div class="entity-longDesc">
+            <p>{{ desc.articleBody }}</p>
+            <p class="entity-desc-source" v-if="desc.url">Source: <a target="_blank" :href="desc.url">Wikipedia</a></p>
+            </div>
         </div>
 
         <div class="entity-btns">
           <div class="entity-on-goog">
-            <button><a :href="`https://www.google.com/search?q=${entity.result.name}+&kponly&kgmid=${entity.result['@id'].substring(3)}`" target="_blank">View on Google</a></button>
+            <button><a :href="`https://www.google.com/search?q=${entity.result.name}+&kponly&kgmid=${entity.result['@id'].substring(3)}`" target="_blank"><font-awesome-icon :icon="['fab', 'google']"  /> View on Google</a></button>
           </div>
           <div v-if="entity.result.url" class="entity-website">
             <button>
-              <a target="_blank" :href="entity.result.url">Entity Website</a>
+              <a target="_blank" :href="entity.result.url"><font-awesome-icon :icon="['fas', 'globe-africa']"  /> Entity Website</a>
             </button>
           </div>
         </div>
@@ -242,6 +245,11 @@ option {
   margin-bottom: 10px;
 }
 
+.entity-desc-source {
+  margin-top: 10px;
+  font-style: italic;
+}
+
 .entity-types {
   margin-bottom: 10px;
 }
@@ -288,7 +296,7 @@ option {
   background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
   background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
   background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-  width: 150px;
+  width: 160px;
   font-size: 16px;
   color: #fff;
   text-decoration: none;

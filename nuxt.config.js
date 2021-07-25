@@ -15,7 +15,10 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'preload', type: 'font/woff2', as: 'font', href: 'fonts/HelveticaNeueCyr-Heavy.woff2', crossorigin: 'anonymous' },
+      { rel: 'preload', type: 'font/woff2', as: 'font', href: 'fonts/HelveticaNeueCyr-Medium.woff2', crossorigin: 'anonymous' },
+      { rel: 'preload', type: 'font/woff2', as: 'font', href: 'fonts/HelveticaNeueCyr-Thin.woff2', crossorigin: 'anonymous' }
     ]
   },
 
@@ -33,7 +36,15 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     '@nuxt/image',
+    '@nuxtjs/fontawesome'
   ],
+
+  fontawesome: {
+    icons: {
+      solid: ['faGlobeAfrica'],
+      brands: ['faGoogle']
+    }
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
