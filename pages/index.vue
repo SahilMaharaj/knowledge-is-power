@@ -44,6 +44,21 @@
             <option value="VideoGameSeries">Video Game Series</option>
           </select>
         </div>
+
+        <div class="lang">
+          <select class="sl-lang" v-model="lang" name="lang" id="lang">
+            <option value="ar">Arabic</option>
+            <option value="en">English</option>
+            <option value="de">German</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="it">Italian</option>
+            <option value="ja">Japanese</option>
+            <option value="ko">Korean</option>
+            <option value="nl">Dutch</option>
+            <option value="pt">Portuguese</option>
+          </select>
+        </div>
       </div>
     </form>
 
@@ -110,7 +125,8 @@ export default {
       limit: '',
       type: '',
       noResults: '',
-      loading: false
+      loading: false,
+      lang: 'en'
     }
   },
   methods: {
@@ -119,10 +135,11 @@ export default {
         const userQuery = escape(this.input)
         const setLimit = this.limit
         const setType = this.type
+        const setLang = this.lang
         this.results = ''
         this.noResults = ''
         this.loading = true
-        const results = await this.$axios.$get(`https://kgsearch.googleapis.com/v1/entities:search?limit=${setLimit}&query=${userQuery}&types=${setType}&key=AIzaSyA38VQCpP0Tk2ahl1xj9a428QCe8e2IhtM`)
+        const results = await this.$axios.$get(`https://kgsearch.googleapis.com/v1/entities:search?limit=${setLimit}&query=${userQuery}&types=${setType}&languages=${setLang}&key=AIzaSyA38VQCpP0Tk2ahl1xj9a428QCe8e2IhtM`)
         
         this.results = results
         this.error = ''
@@ -151,7 +168,7 @@ export default {
 
 <style scoped>
 .main-wrapper {
-  margin-bottom: 30px;
+  margin: 30px 0;
 }
 
 form {
@@ -198,15 +215,15 @@ form {
   margin-top: 15px;
 }
 
-.limit, .type {
+.limit, .type, .lang {
     flex: 1;
 }
 
-.limit {
-  margin-right: 10px;
+.type {
+  margin: 0 10px;
 }
 
-.sl-limit, .sl-type {
+.sl-limit, .sl-type, .sl-lang {
   -webkit-appearance: none; 
   -moz-appearance: none;
   appearance: none;
