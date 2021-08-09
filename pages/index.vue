@@ -139,7 +139,7 @@ export default {
         this.results = ''
         this.noResults = ''
         this.loading = true
-        const results = await this.$axios.$get(`https://kgsearch.googleapis.com/v1/entities:search?limit=${setLimit}&query=${userQuery}&types=${setType}&languages=${setLang}&key=AIzaSyA38VQCpP0Tk2ahl1xj9a428QCe8e2IhtM`)
+        const results = await this.$axios.$get(`https://kgsearch.googleapis.com/v1/entities:search?limit=${setLimit}&query=${userQuery}&types=${setType}&languages=${setLang}&key=${process.env.API_KEY}`)
         
         this.results = results
         this.error = ''
