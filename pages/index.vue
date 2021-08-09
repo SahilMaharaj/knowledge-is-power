@@ -139,7 +139,7 @@ export default {
         this.results = ''
         this.noResults = ''
         this.loading = true
-        const results = await this.$axios.$get(`https://kgsearch.googleapis.com/v1/entities:search?limit=${setLimit}&query=${userQuery}&types=${setType}&languages=${setLang}&key=${process.env.API_SECRET}`)
+        const results = await this.$axios.$get(`https://kgsearch.googleapis.com/v1/entities:search?limit=${setLimit}&query=${userQuery}&types=${setType}&languages=${setLang}&key=${process.env.NUXT_ENV_API_SECRET}`)
         
         this.results = results
         this.error = ''
